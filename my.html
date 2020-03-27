@@ -1,33 +1,55 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>my</title>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/aes-min.js"></script>
+   
 </head>
 <body>
+<div id="encryption">
   <input type="text" id="text_to_encrypt" placeholder="Text to encrpt">
+  
   <button onclick="encrypt()">Encrypt</button>
+  
   <p id="encrypted"></p>
- <input type="text" id="text_to_decrypt" placeholder="Text to decrypt">
-  <button onclick="decrypt()">Decrypt</button>
-  <p id"decrypted">/<p>
+  
+ </div>
+ <div id="decryption">
+ 
+ <input type="text" id= "to_decrypt" placeholder="text to decrypt">
+ 
+ <button onclick="decrypt()">Decrypt</button>
+ 
+ <p id="decrypted"></p>
+ 
   
          
          
-         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script> 
+        
         <script> 
           
           function encrypt(){
-            var text=document.getElementById("text_to_encrypt").value;
-           var encrypted_text= CryptoJS.AES.encrypt(text, "9063482433");
-            document.getElemetById("encrypted").innerHTML=encrypted_text;
-          }
-          function decrypt(){
-            var text=document.getElementById("text_to_decrypt").value;
-            var decrypted_bytes=CryptoJS.AES.decrypt(text, "9063482433");
-            var plain=decrypted_bytes.toString(CryptoJS.enc.Utf8);
-            document.getElementById("decrypted").innerHTML=plain;
+          
+          var text=document.getElementById("text_to_encrypt").value;
+          
+          var encrypted_text= CryptoJS.AES.encrypt(text, "9063482433");
+          
+          document.getElementById("encrypted").innerHTML=encrypted_text;
           
           }
+          
+          
+          function decrypt(){
+          var text=document.getElementById("to_decrypt").value;
+          var d=CryptoJS.AES.decrypt(text, "9063482433");
+          var plain=d.toString(CryptoJS.enc.Utf8);
+          document.getElementById("decrypted").innerHTML=plain;
+          
+          
+          
+          }
+          
+          
    </script>           
   
 </body>
