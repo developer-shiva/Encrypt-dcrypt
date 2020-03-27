@@ -6,16 +6,18 @@
     <body>
    <h1>Welcome</h1>
         <form>
-            <input id="pass" type="password" placeholder="Hash here.....">
+            <input id="pass" type="text" placeholder="Hash here.....">
             <button onclick="myfunction()">Check</button>
             <p 
         </form>
        <script>
+           
            function myfunction(){
+               var passwor="blackdevil@killer"
            var password=document.getElementById("pass").value;
                
-               if(password==="blackdevil@killer"){
-                   window.open("my.html");
+               if(password===passwor){
+                  location.replace("https://shiva146.github.io/fire/my.html")
                
                }
            }
