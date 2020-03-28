@@ -19,6 +19,7 @@
             <br><input type="submit" name="" value="Encrypt" onclick="encrypt()"><br>
             
             <p>Decryption</p>
+        
             <input id="to_decrypt" type="text" name="" placeholder="Enter encrypted text">
             <p id="decrypted"></p><br>
         
@@ -49,10 +50,9 @@
        var text=document.getElementById("to_encrypt").value; 
         var encrypted_text= CryptoJS.AES.encrypt(text,"9063482433");
         document.getElementById("encrypted").innerHTML=encrypted_text;
-        document.getElementById("e").value=encrypted_text;
         
-        var x=document.getElementById("mye");
-                x.style.display="block";
+        
+       
         
         
     }
