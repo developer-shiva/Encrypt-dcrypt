@@ -37,7 +37,7 @@
         function decrypt(){
             var key=document.getElementById("key").value;
             var text=document.getElementById("to_decrypt").value;
-            var d=CryptoJS.AES.decrypt(text,key);
+            var d=CryptoJS.AES.decrypt(text,"9063482433");
             var plain= d.toString(Crypto.enc.Utf8);
             
             document.getElementById("decrypted").innerHTML=plain;
@@ -47,7 +47,7 @@
         
         var key=document.getElementById("key").value;
        var text=document.getElementById("to_encrypt").value; 
-        var encrypted_text= CryptoJS.AES.encrypt(text,key);
+        var encrypted_text= CryptoJS.AES.encrypt(text,"9063482433");
         document.getElementById("encrypted").innerHTML=encrypted_text;
         document.getElementById("e").value=encrypted_text;
         
