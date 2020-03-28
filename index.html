@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>var use="test"; var pas="test";</script>
+<body>
+    <div class="loginbox">
+    <img src="avatar.png" class="avatar">
+        <h1>Login Here</h1>
+        
+            <p>Username</p>
+            <input id="user" type="text"  placeholder="Enter Username">
+            <p>Password</p>
+            <input id="pass" type="password" name="" placeholder="Enter Password">
+            <p id="demo"></p><br>
+            <input  type="submit"  value="Login" onclick="myfunction()">
+            
+        
+        
+    </div>
+    
+    <script>
+    function myfunction(){
+       var user =document.getElementById("user").value;
+        var password =document.getElementById("pass").value;
+        if(user===use&&password===pas){
+            
+            window.location.assign("https://shiva146.github.io/fire/my.html")
+        }
+        
+    }
+    
+    </script>
+
+</body>
+</head>
+</html>

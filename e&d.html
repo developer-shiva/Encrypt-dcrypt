@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Encryption and Decryption</title>
+    <link rel="stylesheet" type="text/css" href="e&d.css">
+<body>
+    <div class="loginbox">
+    
+        <h1>Encryption and decryption </h1>
+        <div id="k">
+        <p>Key</p>
+            <input id="key" type="password" name="" placeholder="Enter the secret key"><br>
+        </div><br>
+            
+            <p>Encryption</p>
+            <input id="to_encrypt" type="text" name="" placeholder="Enter text to encrypt">
+            <p id="encrypted"></p>
+       
+        
+            <br><input type="submit" name="" value="Encrypt" onclick="encrypt()"><br>
+            
+            <p>Decryption</p>
+            <input id="to_decrypt" type="text" name="" placeholder="Enter encrypted text">
+            <p id="Decrypted" ></p><br>
+        
+            <input type="submit" name="" value="Decrypt" onclick="decrypt()">
+        
+       
+            
+       
+        
+    </div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script> 
+  
+    <script>
+        function decrypt(){
+            var key=document.getElementById("key").value;
+            var text=document.getElementById("to_decrypt").value;
+            var d=CryptoJS.AES.decrypt(text,key);
+            var plain=d.toString(CryptoJS.enc.Utf8);
+            document.getElementById("decrypted").innerHTML=plain;
+            
+        }
+    function encrypt(){
+        
+        var key=document.getElementById("key").value;
+       var text=document.getElementById("to_encrypt").value; 
+        var encrypted_text= CryptoJS.AES.encrypt(text,key);
+        document.getElementById("encrypted").innerHTML=encrypted_text;
+        document.getElementById("e").value=encrypted_text;
+        
+        var x=document.getElementById("mye");
+                x.style.display="block";
+        
+        
+    }
+        
+      
+    </script>
+
+</body>
+</head>
+</html>
