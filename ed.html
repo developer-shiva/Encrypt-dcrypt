@@ -35,10 +35,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script> 
   
     <script>
+
         function decrypt(){
             var key=document.getElementById("key").value;
             var text=document.getElementById("to_decrypt").value;
-            var d=CryptoJS.AES.decrypt(text,"9063482433");
+            var d=CryptoJS.AES.decrypt(text,key);
             var plain= d.toString(Crypto.enc.Utf8);
             
             document.getElementById("decrypted").innerHTML=plain;
@@ -48,7 +49,7 @@
         
         var key=document.getElementById("key").value;
        var text=document.getElementById("to_encrypt").value; 
-        var encrypted_text= CryptoJS.AES.encrypt(text,"9063482433");
+        var encrypted_text= CryptoJS.AES.encrypt(text,key);
         document.getElementById("encrypted").innerHTML=encrypted_text;
         
         
@@ -58,7 +59,7 @@
     }
         
       
-    </script>
+   </script>
 
 </body>
 </head>
