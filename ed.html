@@ -40,9 +40,9 @@
             var key=document.getElementById("key").value;
             var text=document.getElementById("to_decrypt").value;
             var d=CryptoJS.AES.decrypt(text,key);
-            var plain= d.toString(Crypto.enc.Utf8);
+           //var plain= d.toString(Crypto.enc.Utf8);
             
-            document.getElementById("decrypted").innerHTML=plain;
+            document.getElementById("decrypted").innerHTML=d;
             
         }
     function encrypt(){
