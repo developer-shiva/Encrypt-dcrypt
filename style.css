@@ -43,6 +43,7 @@ h1{
 }
 
 .loginbox input{
+    margin-top: 30px;
     width: 100%;
     margin-bottom: 20px;
 }
@@ -85,67 +86,9 @@ h1{
     color: #ffc107;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#gSignIn{
+    
+    padding-left: 500px;
+    padding-top: 250px;
+}
 
