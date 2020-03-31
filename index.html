@@ -14,9 +14,10 @@
        
      <div class="loginbox" >
          
-    <img src="avatar.png" class="avatar">
+    <img src="avatar.png" class="avatar" id="Img">
          
-         <p id="demo"></p> 
+         <p id="name"></p> 
+         <p id="email"></p><br>
          
      <div class="g-signin2" id="g" data-width="250" data-height="50" data-longtitle="true" data-onsuccess="onSignIn" data-theme="dark" ></div>
          
@@ -34,9 +35,18 @@
       function onSignIn(googleUser) {
          document.getElementById("g").style.display="none";
           document.getElementById("sign").style.display="block";
-                   
+              
+          
+          
+          
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
+          
+          document.getElementById("Img").src=profile.getImageUrl();
+          document.getElementById("name").innerHTML=profile.getGivenName();
+          document.getElementById("mail").innerHTML=profile.getEmail();
+          
+          
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         console.log('Full Name: ' + profile.getName());
         console.log('Given Name: ' + profile.getGivenName());
