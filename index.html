@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Login</title>
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="747095039190-3tm92hr2l5usgn0o2ok9s1drit8k0il5.apps.googleusercontent.com">
     <meta name="google-site-verification" content="vRwuB6QjwqB8SpQMPFHTWcQvlSent-Szs_lRQpdSf4c" />
@@ -29,19 +30,12 @@
 
  </div> 
      <script>
-            var sign="no";
-        if (auth2.isSignedIn) {
-            document.getElementById("demo").innerHTML="yes";
-               
-        }
-        else{
-            document.getElementById("demo").innerHTML=sign;
-            
-        }
-        </script>
-        
-    <script>
-       
+       function init() {
+  gapi.load('auth2', function() {
+    var x= GoogleAuth.isSignedIn.get();
+      document.getElementById("demo").innerHTML=x;
+  });
+}
       function onSignIn(googleUser) {
          
                    
