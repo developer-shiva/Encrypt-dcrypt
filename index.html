@@ -28,6 +28,16 @@ var initClient = function() {
             client_id: '747095039190-3tm92hr2l5usgn0o2ok9s1drit8k0il5.apps.googleusercontent.com'
         });
 
+if (auth2.isSignedIn.get()) {
+  var profile = auth2.currentUser.get().getBasicProfile();
+    document.getElementById("mail").innerHTML=profile.getEmail();
+  console.log('ID: ' + profile.getId());
+  console.log('Full Name: ' + profile.getName());
+  console.log('Given Name: ' + profile.getGivenName());
+  console.log('Family Name: ' + profile.getFamilyName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+}
         // Attach the click handler to the sign-in button
         auth2.attachClickHandler('signin-button', {}, onSuccess, onFailure);
     });
