@@ -9,27 +9,33 @@
 
 <body>
     <div id="t">
-        <script>document.getElementById("t").style.display="block";</script>
+        <p id="demo"></p> 
+        <script>document.getElementById("t").style.display="block";
+        if (auth2.isSignedIn) {
+            document.getElementById("demo").innerHTML="yes";
+               
+        }
+        
+        </script>
      <div class="loginbox">
     <img src="avatar.png" class="avatar">
-     <div class="g-signin2" id="g" data-width="210" data-height="50" data-longtitle="true" data-onsuccess="onSignIn" data-onfailure="f" data-theme="dark"></div>
-         
+     <div class="g-signin2" id="g" data-width="210" data-height="50" data-longtitle="true" data-onsuccess="onSignIn" data-theme="dark" ></div>
+         <script>
+        document.getElementById("demo").innerHTML=document.getElementById("g").Value;</script>
         <input id="s" type="submit" onclick="signOut();" value="Signout">
-         <script>document.getElementById("g").style.display="none";</script><script>document.getElementById("s").style.display="none";</script>
-           <p id="demo"></p> 
+         <script>//document.getElementById("g").style.display="none";</script><script>//document.getElementById("s").style.display="none";</script>
+           
   
     </div>
+
 
  </div> 
     
     <script>
-        function f(){
-            document.getElementById("demo").innerHTML="test sucess";
-            
-        }
+       
       function onSignIn(googleUser) {
-          var x= document.getElementById("g-signin");
-        
+          var x= document.getElementById("g").text;
+                    document.getElementById("demo").innerHTML=x;
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
