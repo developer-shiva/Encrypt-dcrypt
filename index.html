@@ -18,26 +18,22 @@
          
          <p id="demo"></p> 
          
-     <div class="g-signin2" id="g" data-width="250" data-height="50" data-longtitle="true" data-onsuccess="onSignIn" data-theme="dark" style="display: block" ></div>
+     <div class="g-signin2" id="g" data-width="250" data-height="50" data-longtitle="true" data-onsuccess="onSignIn" data-theme="dark" ></div>
          
-        
+        <div id="sign" style="display: none">
         <input id="s" type="submit" onclick="signOut();" value="Signout">
          
-           
+           </div>
   
     </div>
 
 
  </div> 
      <script>
-       function init() {
-  gapi.load('auth2', function() {
-    var x= GoogleAuth.isSignedIn.get();
-      document.getElementById("demo").innerHTML=x;
-  });
-}
+  
       function onSignIn(googleUser) {
-         
+         document.getElementById("g").style.display="none";
+          document.getElementById("sign").style.display="block";
                    
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -59,6 +55,8 @@
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
+         document.getElementById("g").style.display="block";
+          document.getElementById("sign").style.display="none";
     });
   }
 
