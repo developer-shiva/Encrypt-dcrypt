@@ -27,16 +27,15 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
 				<p id="name"></p>
 				<p id="mail"></p>
            		<div class="g-signin2" id="g" data-width="290" data-height="54" data-longtitle="true" data-onsuccess="onSignIn" data-theme="dark" ></div>
-            	
+            	<div id="sign" style="display: none">
+            	<input  type="submit" class="btn" value="Signout" onclick="signOut();">
+                    </div>
             </form>
             
         </div>
     </div>
          
-        <div id="sign" style="display: none">
-        <input id="s" type="submit" onclick="signOut();" value="Signout">
-         
-           </div>
+       
   
     </div>
 
