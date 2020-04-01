@@ -22,8 +22,10 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
 		</div>
 		<div class="login-content">
 			<form>
-				<img src="avatar.svg">
+				<img id="Img" src="avatar.svg">
 				<h2 class="title">Welcome</h2>
+				<p id="name"></p>
+				<p id="mail"></p>
            		<div class="g-signin2" id="g" data-width="290" data-height="54" data-longtitle="true" data-onsuccess="onSignIn" data-theme="dark" ></div>
             	
             </form>
@@ -77,7 +79,7 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
       console.log('User signed out.');
          document.getElementById("g").style.display="block";
           document.getElementById("sign").style.display="none";
-        document.getElementById("Img").src="avatar.png";
+        document.getElementById("Img").src="avatar.svg";
         document.getElementById("name").innerHTML="";
             document.getElementById("mail").innerHTML="";
         
